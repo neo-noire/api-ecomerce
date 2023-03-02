@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_imgs",
+  "info": {
+    "singularName": "user-img",
+    "pluralName": "user-imgs",
+    "displayName": "UserImg",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_img"
+    }
+  }
+}
