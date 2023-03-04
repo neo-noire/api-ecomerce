@@ -3,12 +3,13 @@ module.exports = [
   'strapi::security',
   'strapi::poweredBy',
   {
-    name: 'strapi::cors',
+    name: "strapi::cors",
     config: {
-      enabled: true,
-      headers: '*',
-      origin: ['https://lobster-app-8giew.ondigitalocean.app:1337']
-    }
+      origin: ["*"],
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
+      headers: ["Content-Type", "Authorization", "Origin", "Accept"],
+      keepHeaderOnError: true,
+    },
   },
   'strapi::logger',
   'strapi::query',
